@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParer.urlencoded({extended: true}));
 app.use(express.static('public'));
 
-mongoose.connect('mongodb+srv://admin-tony:dbpwd@todolist.vkkqo.mongodb.net/todolistDB');
+mongoose.connect(process.env.db);
 
 /* Items Schema */
 const itemsSchema = new mongoose.Schema({
